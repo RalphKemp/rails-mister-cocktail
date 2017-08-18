@@ -1,18 +1,23 @@
 <h1 class="main-title">Fancy Cocktails</h1>
 
-
-
-
 <div class="container">
   <div class="row">
-<div class="card text-center"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path @cocktail.photo.path, height: 300, width: 400, crop: :fill %>')">
-  <% @cocktails.each do |cocktail| %>
-  <div class="card-category"><%= cocktail.name %></div>
-  <div class="card-description">
-    <h2><%= @cocktail.ingredients %></h2>
-    <%= end %>
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= cl_image_path cocktail.photo? ? cocktail.photo.path : 'http://www.seriouseats.com/images/2014/11/20141104-cocktail-party-old-fashioneds-holiday-vicky-wasik-3.jpg', height: 300, width: 400, crop: :fill %>)">
+
+          <div class="card-category"><%= cocktail.name %></div>
+        <div class="card-description">
+          <h2><% cocktail.doses.each do |dose| %></h2>
+          <p><%= dose.description %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <a class="card-link" href="#" ></a>
 </div>
+
+
+
