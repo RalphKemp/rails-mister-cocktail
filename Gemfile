@@ -34,7 +34,9 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'cloudinary'
-gem 'carrierwave', '~> 0.11.2'
+
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
 
 ruby '2.3.4'
 # Use Redis adapter to run Action Cable in production
