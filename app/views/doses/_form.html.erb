@@ -1,0 +1,7 @@
+<%= simple_form_for [@cocktail, @dose] do |d| %>
+    <%= d.input :description, placeholder: "dose" %>
+    <%= d.button :submit, class: "btn btn-primary"  %>
+<% end %>
+
+<!-- <form action="/cocktails/1/doses" method="post"></form>
+ -->
